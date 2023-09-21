@@ -4,6 +4,7 @@ import com.example.snakegame.util.Dimensions;
 import com.example.snakegame.util.Direction;
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
 import javafx.scene.canvas.Canvas;
@@ -11,7 +12,9 @@ import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
 import java.util.ResourceBundle;
@@ -34,14 +37,14 @@ public class GameFormController implements Initializable {
     private int[] snakeYs = new int[snakeLength];
     private boolean gameOver = false;
     private int foodX;
-
     private int foodY;
+    private AnimationTimer animationTimer;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         GraphicsContext graphicsContext = canvas.getGraphicsContext2D();
         generateFood();
-        new AnimationTimer() {
+        animationTimer = new AnimationTimer() {
             private long lastUpdate = 0;
 
             @Override
@@ -52,7 +55,8 @@ public class GameFormController implements Initializable {
                     lastUpdate = now;
                 }
             }
-        }.start();
+        };
+        animationTimer.start();
 
         root.sceneProperty().addListener((observableValue, oldScene, newScene) -> {
             if (newScene != null) {
@@ -90,7 +94,17 @@ public class GameFormController implements Initializable {
             graphicsContext.strokeLine(0, i * Dimensions.SQUARE_SIZE, Dimensions.WIDTH, i * Dimensions.SQUARE_SIZE);
         }
 
-        //do some when game over
+        //when game over
+        if (gameOver) {
+            try {
+                animationTimer.stop();
+                Stage stage = (Stage) root.getScene().getWindow();
+                stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/com/example/snakegame/view/GameOverForm.fxml"))));
+                stage.centerOnScreen();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
     }
 
     private void update() {
