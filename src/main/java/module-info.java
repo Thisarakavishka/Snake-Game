@@ -1,6 +1,7 @@
 module com.example.snakegame {
     requires javafx.controls;
     requires javafx.fxml;
+    requires com.jfoenix;
 
 
     opens com.example.snakegame to javafx.fxml;
