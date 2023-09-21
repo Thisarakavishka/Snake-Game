@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane fx:id="root" prefHeight="400.0" prefWidth="800.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.snakegame.controller.LoginFormController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="6.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="58.0">
+         <image>
+            <Image url="@../assets/8433586.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="300.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="58.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
+         <image>
+            <Image url="@../assets/8433586.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="btnStart" buttonType="RAISED" layoutX="350.0" layoutY="191.0" minHeight="35.0" onAction="#btnStartOnAction" prefWidth="100.0" style="-fx-background-color: #32CD32;" text="start" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
