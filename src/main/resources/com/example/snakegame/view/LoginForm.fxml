@@ -11,12 +11,12 @@
    <children>
       <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="6.0" layoutY="58.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="58.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="310.0" AnchorPane.topAnchor="58.0">
          <image>
-            <Image url="@../assets/8433586.jpg" />
+            <Image url="@../assets/Snake.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="400.0" fitWidth="300.0" layoutX="300.0" layoutY="42.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="58.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="58.0">
          <image>
-            <Image url="@../assets/8433586.jpg" />
+            <Image url="@../assets/Snake.jpg" />
          </image>
       </ImageView>
       <JFXButton fx:id="btnStart" buttonType="RAISED" layoutX="350.0" layoutY="191.0" minHeight="35.0" onAction="#btnStartOnAction" prefWidth="100.0" style="-fx-background-color: #32CD32;" text="start" textFill="WHITE">
