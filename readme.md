@@ -68,7 +68,7 @@ The Snake Game is developed using Java and JavaFX. Here are some key details abo
 
 ## License
 
-This Snake Game is released under the [MIT License](LICENSE).
+This Snake Game is released under the [MIT License](LICENSE.txt).
 
 ---
 
